@@ -26,6 +26,24 @@ class Angle {
 };
 
 public class SILab2 {
+    
+     public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        List<Angle> angles=new ArrayList<>();
+        int n =sc.nextInt();
+        sc.nextLine();
+        for(int i=0;i<n;i++){
+            String line=sc.nextLine();
+            String [] parts = line.split("\\s+");
+            angles.add(new Angle(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), Integer.parseInt(parts[2])));
+        }
+
+        List<Integer> result = function(angles);
+        for(int res: result){
+            System.out.println(res);
+        }
+
+    }
 
     public List<Integer> function(List<Angle> angleList) {
         List<Integer> result = new ArrayList<>();//A
